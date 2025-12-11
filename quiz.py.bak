@@ -1,6 +1,6 @@
 #Copyright Håkon Nysveen 2025
 
-def krev_svar(prompt): #def er starten av en funksjon i py    #krev_svar er navnet på funksjonen som gjør så brukeren må skrive et svar, denne kan kalles hva som helst siden den er kun et navn
+def get_nonempty_input(prompt):
     while True:
         answer = input(prompt).strip()
         if answer !="": 
@@ -8,7 +8,7 @@ def krev_svar(prompt): #def er starten av en funksjon i py    #krev_svar er navn
         print ("Du må skrive noe før du kan gå videre!")
  
 while True:
-    navn = krev_svar("Hva heter du?")
+    navn = get_nonempty_input("Hva heter du?")
 
     questions = [
         "Hva er hovedstaden i Norge?",
@@ -29,11 +29,11 @@ while True:
     poeng = 0
     
     for i in range(len(questions)):
-        user_answer = krev_svar(questions[i] + " ").lower()
+        user_answer = get_nonempty_input(questions[i] + " ").lower()
         if user_answer == answers[i].strip().lower():
             print("Riktig!")
             poeng += 1
         else:
             print("Feil!")
 
-    print(f"Gratulerer {navn}, Du fikk {poeng} av {len(questions)} poeng. \nTakk for at du tok quizzen!")
+    print(f"Gratulerer, \n{navn} Du fikk {poeng} av {len(questions)} poeng.")

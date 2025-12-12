@@ -37,3 +37,4 @@ while True:
             print("Feil!")
 
     print(f"Gratulerer {navn}, Du fikk {poeng} av {len(questions)} poeng. \nTakk for at du tok quizzen!")
+    break # går ur av while loopen

@@ -19,18 +19,18 @@ while True:
     ]
     
     answers = [
-        "Oslo",
-        "4",
-        "Donald Trump",
-        "10",
-        "15"
+        ["Oslo"],
+        ["4", "fire"] ,
+        ["Donald Trump"],
+        ["10", "ti"],
+        ["15", "femten"]
     ]
     
     poeng = 0
     
     for i in range(len(questions)):
         user_answer = krev_svar(questions[i] + " ").lower()
-        if user_answer == answers[i].strip().lower():
+        if user_answer in [a.lower() for a in answers[i]]:
             print("Riktig!")
             poeng += 1
         else:
